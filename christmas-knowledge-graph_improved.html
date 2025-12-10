@@ -10,8 +10,10 @@
     <meta property="og:title" content="Christmas Traditions Knowledge Graph">
     <meta property="og:description" content="Interactive force-directed graph visualizing 43 Christmas traditions and their historical origins across 7 categories. Explore fascinating connections between Santa Claus, Christmas trees, gift giving, nativity scenes, and holiday customs from around the world. Discover how ancient pagan traditions influenced modern celebrations.">
     <meta property="og:image" content="https://thomas-weissensteiner.github.io/github.io/preview-image.png">
+    <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Christmas Traditions Knowledge Graph - Interactive visualization of 43 traditions">
     <meta property="og:site_name" content="Christmas Knowledge Graph">
     
     <!-- Twitter -->
@@ -27,6 +29,24 @@
     <meta name="description" content="Interactive force-directed graph visualizing 43 Christmas traditions, their origins, and relationships. Explore connections between Santa Claus, Christmas trees, gift giving, and more across 7 categories and 6 relationship types.">
     <meta name="author" content="Thomas Weissensteiner">
     <meta name="keywords" content="Christmas, traditions, knowledge graph, visualization, history, Santa Claus, Christmas tree, interactive graph, holiday origins">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Christmas Traditions Knowledge Graph",
+        "description": "Interactive force-directed graph visualizing 43 Christmas traditions and their historical origins across 7 categories. Explore fascinating connections between Santa Claus, Christmas trees, gift giving, nativity scenes, and holiday customs from around the world. Discover how ancient pagan traditions influenced modern celebrations.",
+        "url": "https://thomas-weissensteiner.github.io/github.io/christmas-knowledge-graph_improved.html",
+        "image": "https://thomas-weissensteiner.github.io/github.io/preview-image.png",
+        "author": {
+            "@type": "Person",
+            "name": "Thomas Weissensteiner"
+        },
+        "applicationCategory": "Educational",
+        "operatingSystem": "Any"
+    }
+    </script>
     
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
@@ -335,10 +355,15 @@
     </style>
 </head>
 <body>
-    <!-- Static content for social media crawlers -->
-    <div style="position: absolute; left: -9999px; top: -9999px; width: 1px; height: 1px; overflow: hidden;">
-        <h1>Christmas Traditions Knowledge Graph</h1>
-        <p>Interactive force-directed graph visualizing 43 Christmas traditions and their historical origins across 7 categories. Explore fascinating connections between Santa Claus, Christmas trees, gift giving, nativity scenes, and holiday customs from around the world. Discover how ancient pagan traditions influenced modern celebrations.</p>
+    <!-- Loading content visible to crawlers and before React loads -->
+    <div id="loading-content" style="padding: 60px 20px; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #111827; color: white; min-height: 100vh;">
+        <h1 style="font-size: 32px; margin-bottom: 20px;">🎄 Christmas Traditions Knowledge Graph</h1>
+        <p style="font-size: 18px; max-width: 800px; margin: 0 auto 30px; line-height: 1.6; color: #d1d5db;">
+            Interactive force-directed graph visualizing 43 Christmas traditions and their historical origins across 7 categories. 
+            Explore fascinating connections between Santa Claus, Christmas trees, gift giving, nativity scenes, and holiday customs 
+            from around the world. Discover how ancient pagan traditions influenced modern celebrations.
+        </p>
+        <p style="color: #9ca3af; font-size: 14px;">Loading interactive visualization...</p>
     </div>
     
     <div id="root"></div>
@@ -1369,6 +1394,12 @@
         }
 
         ReactDOM.render(React.createElement(App), document.getElementById('root'));
+        
+        // Hide loading content after React has rendered
+        const loadingContent = document.getElementById('loading-content');
+        if (loadingContent) {
+            loadingContent.style.display = 'none';
+        }
     </script>
 </body>
 </html>
