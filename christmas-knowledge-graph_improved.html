@@ -355,15 +355,9 @@
     </style>
 </head>
 <body>
-    <!-- Loading content visible to crawlers and before React loads -->
-    <div id="loading-content" style="padding: 60px 20px; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #111827; color: white; min-height: 100vh;">
-        <h1 style="font-size: 32px; margin-bottom: 20px;">🎄 Christmas Traditions Knowledge Graph</h1>
-        <p style="font-size: 18px; max-width: 800px; margin: 0 auto 30px; line-height: 1.6; color: #d1d5db;">
-            Interactive force-directed graph visualizing 43 Christmas traditions and their historical origins across 7 categories. 
-            Explore fascinating connections between Santa Claus, Christmas trees, gift giving, nativity scenes, and holiday customs 
-            from around the world. Discover how ancient pagan traditions influenced modern celebrations.
-        </p>
-        <p style="color: #9ca3af; font-size: 14px;">Loading interactive visualization...</p>
+    <!-- Minimal loading content for crawlers - invisible to users -->
+    <div id="loading-content" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;">
+        <h1>Christmas Traditions Knowledge Graph</h1>
     </div>
     
     <div id="root"></div>
