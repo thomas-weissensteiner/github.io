@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christmas Traditions Knowledge Graph</title>
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -21,6 +20,8 @@
     <meta name="twitter:title" content="Christmas Traditions Knowledge Graph">
     <meta name="twitter:description" content="Interactive visualization exploring 43 Christmas traditions and their origins. Discover the fascinating connections between holiday customs from around the world.">
     <meta name="twitter:image" content="https://thomas-weissensteiner.github.io/github.io/preview-image.png">
+    
+    <title>Christmas Traditions Knowledge Graph</title>
     
     <!-- General Meta -->
     <meta name="description" content="Interactive force-directed graph visualizing 43 Christmas traditions, their origins, and relationships. Explore connections between Santa Claus, Christmas trees, gift giving, and more across 7 categories and 6 relationship types.">
@@ -334,7 +335,26 @@
     </style>
 </head>
 <body>
+    <!-- Static content for social media crawlers -->
+    <div style="position: absolute; left: -9999px; top: -9999px; width: 1px; height: 1px; overflow: hidden;">
+        <h1>Christmas Traditions Knowledge Graph</h1>
+        <p>Interactive force-directed graph visualizing 43 Christmas traditions and their historical origins across 7 categories. Explore fascinating connections between Santa Claus, Christmas trees, gift giving, nativity scenes, and holiday customs from around the world. Discover how ancient pagan traditions influenced modern celebrations.</p>
+    </div>
+    
     <div id="root"></div>
+    
+    <!-- Static content for crawlers and no-JS users -->
+    <noscript>
+        <div style="padding: 40px; text-align: center; font-family: Arial, sans-serif;">
+            <h1>🎄 Christmas Traditions Knowledge Graph</h1>
+            <p style="font-size: 18px; max-width: 800px; margin: 20px auto;">
+                Interactive force-directed graph visualizing 43 Christmas traditions and their historical origins across 7 categories. 
+                Explore fascinating connections between Santa Claus, Christmas trees, gift giving, nativity scenes, and holiday customs 
+                from around the world. Discover how ancient pagan traditions influenced modern celebrations.
+            </p>
+            <p style="color: #666;">JavaScript is required to view the interactive visualization.</p>
+        </div>
+    </noscript>
 
     <script>
         const { useState, useRef, useCallback, useMemo, useEffect } = React;
